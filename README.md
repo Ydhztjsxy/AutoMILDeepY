@@ -120,4 +120,59 @@ Mean AUC (T1D): 0.9970
 
 ```
 
+### Model Testing and Evaluation
 
+## Train the model and save the best model file
+
+```
+ jupyter notebook AutoTFCNNY-Model.ipynb 
+ 
+ -----aa_file = "../Data/PCA15.txt"  #Amino acid characterization file path
+ -----disease_list = ["T1D", "MS"]  #Documentation of processed autoimmune diseases
+ -----data_dir = f'../Data/{disease_name}' #Disease File Path
+ -----  model_path = f'../Model Test Files/AutoTFCNNY/{disease_name}checkpoint.pt' #Save path of the model file
+ 
+```
+
+```
+ jupyter notebook AttenBILSTMCNY-Model.ipynb 
+ 
+ -----aa_file = "../Data/PCA15.txt"  #Amino acid characterization file path
+ -----disease_list = ["T1D", "MS"]  #Documentation of processed autoimmune diseases
+ -----data_dir = f'../Data/{disease_name}' #Disease File Path
+ -----  model_path = f'../Model Test Files/AttenBILSTMCNY/{disease_name}checkpoint.pt' #Save path of the model file
+ 
+```
+
+## Model Evaluation
+```
+ jupyter notebook AutoTFCNNY-Test.ipynb 
+ 
+ -----aa_file = "../Data/PCA15.txt"  # Read the amino acid characterization file
+ ----- model_path = f'../Model Test Files/AutoTFCNNY/{model_name}checkpoint.pt' # Reading model files
+ -----disease_list = ["T1D", "MS"]  #Documentation of processed autoimmune diseases
+ -----new_data_dir = f'../New Test Data/{disease_name}/' # New Test Set Path
+
+```
+```
+ jupyter notebook AttenBILSTMCNY-Test.ipynb 
+ 
+ -----aa_file = "../Data/PCA15.txt"  # Read the amino acid characterization file
+ ----- model_path = f'../Model Test Files/AttenBILSTMCNY/{model_name}checkpoint.pt' # Reading model files
+ -----disease_list = ["T1D", "MS"]  #Documentation of processed autoimmune diseases
+ -----new_data_dir = f'../New Test Data/{disease_name}/' # New Test Set Path
+
+```
+
+### Result
+
+The metrics, accuracy, sensitivity, specificity, and area under the receiver operating characteristic (ROC) curve (AUC), are calculated and printed as:
+``` 
+MS - Accuracy: 0.9062, Sensitivity: 0.8125, Specificity: 1.0000, AUC: 0.9961
+T1D - Accuracy: 1.0000, Sensitivity: 1.0000, Specificity: 1.0000, AUC: 1.0000
+
+Collected Performance Metrics(threshold=0.5):
+{'Disease': 'MS', 'Accuracy': 0.90625, 'Sensitivity': 0.8125, 'Specificity': 1.0, 'AUC': 0.99609375}
+{'Disease': 'T1D', 'Accuracy': 1.0, 'Sensitivity': 1.0, 'Specificity': 1.0, 'AUC': 1.0}
+
+```
