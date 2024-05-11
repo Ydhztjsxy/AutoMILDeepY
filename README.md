@@ -122,7 +122,7 @@ Mean AUC (T1D): 0.9970
 
 ### Model Testing and Evaluation
 
-## Train the model and save the best model file
+#### Train the model and save the best model file
 
 ```
  jupyter notebook AutoTFCNNY-Model.ipynb 
@@ -144,7 +144,7 @@ Mean AUC (T1D): 0.9970
  
 ```
 
-## Model Evaluation
+#### Model Evaluation
 ```
  jupyter notebook AutoTFCNNY-Test.ipynb 
  
@@ -164,7 +164,7 @@ Mean AUC (T1D): 0.9970
 
 ```
 
-### Result
+#### Result
 
 The metrics, accuracy, sensitivity, specificity, and area under the receiver operating characteristic (ROC) curve (AUC), are calculated and printed as:
 ``` 
